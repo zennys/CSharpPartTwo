@@ -1,0 +1,14 @@
+using System;
+//Write a program to convert decimal numbers to their hexadecimal representation.
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter number: ");
+            int num = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(Convert.ToString(num, 16));
+        }
+    }
+
