@@ -1,0 +1,27 @@
+using System;
+using System.Numerics;
+/*Write a program to calculate n! for each n in the range [1..100]. 
+ */
+class Program
+{
+    static   BigInteger FactorialCalculation(int n)
+    {
+        BigInteger factorial = 1;
+
+        for (int i = 1; i <= n; i++)
+        {
+            factorial *= i;
+        }
+
+        return factorial;
+    }
+    static void Main(string[] args)
+    {       
+        for (int i = 1; i <= 100; i++)
+        {
+
+            Console.WriteLine("{0}!= {1}", i, FactorialCalculation(i));
+        }
+    }
+
+}
