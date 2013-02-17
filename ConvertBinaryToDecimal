@@ -1,0 +1,25 @@
+using System;
+/*Write a program to convert binary numbers to their decimal representation */
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Please enter a binary number: ");
+        long binary = long.Parse(Console.ReadLine());
+        Console.WriteLine(ConvertToType(binary, 2));
+    }
+
+    public static int ConvertToType(long binary, int dec)
+    {
+        string stringNumber = binary.ToString();
+       
+        int count = stringNumber.Length - 1;
+        int result = 0;
+        for (int i = 0; i < stringNumber.Length; i++)
+        {
+            result = result + int.Parse(stringNumber[i].ToString()) * (int)(Math.Pow(dec, count));
+            count--;
+        }
+        return result;
+    }
+}
