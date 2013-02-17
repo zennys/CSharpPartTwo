@@ -1,0 +1,35 @@
+using System;
+/*Write a program, that reads from the console an array of N integers and an integer K, 
+ * sorts the array and using the method Array.BinSearch() finds the largest number in the array which is ≤ K. 
+ */
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = new int[] { 1,-1,4,46,7,53,23,-9,45,123,5 };
+            int k = 100;
+            Array.Sort(arr);
+
+            int index = Array.BinarySearch(arr, k);
+
+            Console.WriteLine("K = {0}", k);
+
+            while (true)
+            {
+                if (index < 0)
+                {
+                    --k;
+                    index = Array.BinarySearch(arr, k);
+                }
+                else if (index <= k)
+                {
+                    Console.WriteLine("The best element that is <=  is: {0}", arr[index]); break;
+                }
+                else
+                {
+                    Console.WriteLine("No such element"); break;
+                }
+            }
+        }
+    
+}
